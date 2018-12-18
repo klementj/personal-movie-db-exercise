@@ -5,7 +5,7 @@ Sørger for at lave instanser af favorit sektionen. Sætter HTML op til favorits
 Klassen skal, som du allerede har gættet, importere FavoritView for at kunne lave en ny instans og kalde metoden. FavoritController skal endnu ikke have en `constructor()`. Opsæt en metode kaldet `setupView()` der laver alle movie cards, sætter denne data ind i HTML strukturen for resten af sektionen og indsætter denne samlede HTML struktur for favorit sektionen ind i index.html filens body.
 
 ## Eksempel på FavoritController.js
-Hvis du har behov for hjælp til hvordan du kan opsætte filen, kan du se på eksemplet her under. Det er ikke et krav at den er sat op præcis sådan.
+Hvis du har behov for hjælp til hvordan du kan opsætte filen, kan du se på eksemplet her under. Det er ikke et krav at den er sat op præcis sådan. 
 
 ```javascript 
 import FavoriteView from '../view/FavoriteView'

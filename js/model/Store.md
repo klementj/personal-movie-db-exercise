@@ -1,7 +1,7 @@
 # Oprette en single store
 Formål at håndtere et objekt til data, som din app kan læse og skrive til. Uanset hvilket modul der skriver eller læser data, så sker det fra det samme objekt. Store skal også kunne gemme og hente data til og fra browserens [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage).
 
-## Opsætning af contructor
+## Opsætning af constructor
 Opret klassen `Store` der i sin `constructor()` tjekker om der ligger data i localStorage, henter den ud og sætter data til en variabel. Hvis der ikke ligger noget data i localStorage så returner et tomt objekt og log en fejl i konsollen.
 
 ## Opsætning af metoder
@@ -23,6 +23,11 @@ For at sikre at det er den samme instant, det samme objekt, du bruger på tværs
 ```javascript
 export let store = new Store()
 ```
+
+## Gemme og hente fra browserens localStorage
+For at give brugeren af din app en god oplevelse og gemme deres data, fx hvis browseren lukkes eller computeren genstartes, skal du gemmme `movieDB` i browserens localStorage. I eksemplet med metoden `saveToLocalStorage()` laver du et JavaScript Objekt om til en streng. Når du loader denne streng igen og laver den om med `JSON.parse()` skal du være opmærksom på, at den ikke bliver lavet om til et JavaScript Objekt men et JSON Objekt. Du skal derfor huske at bruge din `Movie` klasse til at lave hvert JSON Objekt om til et JavaScript Objekt.
+
+For at læse mere om forskellene mellem de to kan du læse denne artikel [JavaScript Object vs JSON](https://medium.com/techtrument/javascript-object-vs-json-117965ea3dea)
 
 ## Eksempel på Store.js
 Nedenfor kan du se et eksempel på hvordan filens struktur kan se ud. Du skal selv lave den nødvendige kode for at få `constructor()` og metoder til at virke.
