@@ -40,7 +40,7 @@ export default class MovieCardComponent{
 ```
 
 ## Tilføje et ID til hvert card
-Du har måske lagt mærke til at der i min constructor er tilføjet et ID. Dette bliver tilføjet til hvert movie card som en [custom-data-attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-*). Tilføj en data- attribut til cardets knap så det ser ud som i mit eksempel. Jeg har givet min data attribut et navn som data-id.
+Du har måske lagt mærke til at der i min constructor er tilføjet et ID. Dette bliver tilføjet til hvert movie card som en [custom-data-attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-*), denne attribut kan du let få adgang til med JavaScript. Tilføj en data- attribut til knappen så det ser ud som i mit eksempel. Jeg har givet min data attribut et navn som data-id.
 
 ```javascript
 ...
