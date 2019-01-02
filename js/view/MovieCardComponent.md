@@ -1,8 +1,8 @@
 # Oprette MovieCardComponent.js
-Tanken bag denne fil er, at den skal kunne fungere som et genbrugeligt komponent i din webapp. Så alle de steder hvor der skal oprettes et movie card kan du imporetere dette modul og lave nye instancer med et movie objekt.
+Denne fil skal kunne fungere som et genbrugeligt komponent i din webapp. Så alle de steder hvor der skal oprettes et movie card kan du importere dette modul, instantiere klassen med de rigtige properties og få returneret et stykke HTML som udgør en film.
 
 ## Opsætning af klassen
-Lav en constructor til din klasse, der modtager et movie objekt. Lav også en metoder der består af HTML til et enkelt movie card og sæt filmenes variabler ind hvor de skal være. Brug [template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) til det. Du kan fx kalde metoden for `render()` eller `createCard()` 
+Lav en constructor til din klasse, der modtager et movie objekt. Lav også en metoder der består af HTML til et enkelt movie card og sæt filmenes variabler ind hvor de skal være. Brug [template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) til det. Du kan fx kalde metoden for `render()` eller `createCard()`.
 
 ## Eksempel på opsætning
 ```javascript
@@ -13,7 +13,7 @@ export default class MovieCardComponent{
     this.plot = movie.Plot
     this.year = movie.Year
     this.genre = movie.Genre
-    // this.id = movie.id
+    this.id = movie.imdbID  
   }
 
   render(){
@@ -26,7 +26,7 @@ export default class MovieCardComponent{
           <div class="card-content">
             <span class="card-title activator white-text text-darken-4">${this.title}<i class="material-icons right">arrow_upward</i></span>
             <p>Year: ${this.year}<br>Genre: ${this.genre}</p>
-            <p><a href="#">${ this.fav === true ? `remove from fav` : `add to fav` }Add to Favorites</a></p>
+            <p><a href="#" class="favorite-movie-button">${ this.fav === true ? `remove from fav` : `add to fav` }Add to Favorites</a></p>
           </div>
           <div class="card-reveal black">
             <span class="card-title white-text text-darken-4">${this.title}<i class="material-icons right">close</i></span>
@@ -37,4 +37,13 @@ export default class MovieCardComponent{
     `
   }
 }
+```
+
+## Tilføje et ID til hvert card
+Du har måske lagt mærke til at der i min constructor er tilføjet et ID. Dette bliver tilføjet til hvert movie card som en [custom-data-attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-*). Tilføj en data- attribut til cardets knap så det ser ud som i mit eksempel. Jeg har givet min data attribut et navn som data-id.
+
+```javascript
+...
+  <p><a type="button" class="favorite-movie-button" data-id="${this.id}">...</a></p>
+...
 ```
